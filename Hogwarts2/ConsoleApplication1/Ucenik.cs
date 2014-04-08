@@ -30,5 +30,7 @@ namespace ConsoleApplication1
         {
             return kuca.Ime_kuce;
         }
+
+        //izmjena
     }
 }
