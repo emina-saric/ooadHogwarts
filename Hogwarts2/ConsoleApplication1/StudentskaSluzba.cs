@@ -10,7 +10,7 @@ namespace ConsoleApplication1
     {
         public StudentskaSluzba() { }
         
-        List<Ucenik> _ucenici = new List<Ucenik>();
+        List<Ucenik> _ucenici = new List<Ucenik>(); 
         List<Profesor> _profesori = new List<Profesor>();
         List<Ucenik> _prefekti = new List<Ucenik>();
         List<Osoba> _clanovi_studentske = new List<Osoba>();
