@@ -4,25 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1
+namespace DAL
 {
     class Utakmica
     {
-        Utakmica(DateTime termin, MetlobojskaEkipa tim1, MetlobojskaEkipa tim2, int bod1 = 0, int bod2 = 0, bool odigrana = false)
+       public  Utakmica(int id_utakmica, DateTime termin, int id_tim1, int id_tim2 , int bod1 = 0, int bod2 = 0, bool odigrana = false)
         {
+            Id_utakmica = id_utakmica;
             Termin = termin;
-            Tim1 = tim1;
-            Tim2 = tim2;
+            Id_tim1 = id_tim1;
+            Id_tim2 = id_tim2;
             Bodovi1 = bod1;
             Bodovi2 = bod2;
             Odigrana = odigrana;
         }
-        DateTime Termin { get; set; }
-        MetlobojskaEkipa Tim1 { get; set; }
-        MetlobojskaEkipa Tim2 { get; set; }
-        int Bodovi1 { get; set; }
-        int Bodovi2 { get; set; }
-        bool Odigrana { get; set; }
+        public DateTime Termin { get; set; }
+        public int Id_tim1  { get; set; }
+        public int Id_tim2 { get; set; }
+        public int Bodovi1 { get; set; }
+        public int Bodovi2 { get; set; }
+        public bool Odigrana { get; set; }
+        public int Id_utakmica { get; set; }
+
 
         public void OdigranaUtakmica(int bod1, int bod2)
         {
@@ -31,8 +34,7 @@ namespace ConsoleApplication1
                 Bodovi1 = bod1;
                 Bodovi2 = bod2;
                 Odigrana = true;
-                Tim1.EvidentirajBodove(bod1);
-                Tim2.EvidentirajBodove(bod2);
+              
             }
         }
         public void PromjeniTermin(DateTime novi_termin)

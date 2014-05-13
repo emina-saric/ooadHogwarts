@@ -3,20 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ConsoleApplication1
+namespace DAL
 {
     class Ucenik : Osoba
     {
-        Ucenik(string ime, string prezime, DateTime datum_rodjenja, string username, string password, int godina_studija, Kuca _kuca,bool prefekt)
+
+
+       public  Ucenik(int id_ucenik, string ime, string prezime, DateTime datum_rodjenja, string username, string password, int godina_studija, int id_kuca,bool prefekt)
             : base(ime, prezime, datum_rodjenja, username, password)
         {
+            Id_ucenik = id_ucenik;
             Godina_studija = godina_studija;
-            kuca = _kuca;
+            Id_kuca = id_kuca;
             Prefekt = prefekt;
         }
-        int Godina_studija { get; set; }
-        Kuca kuca { get; set; }
-        bool Prefekt { get; set; }
+
+        public int Godina_studija { get; set; }
+        public bool Prefekt { get; set; }
+        public int Id_ucenik { get; set; }
+        public int Id_kuca { get; set; }
         
         public void PovecajGodinuStudija()
         {
@@ -26,11 +31,6 @@ namespace ConsoleApplication1
         {
             if (Godina_studija > 4) Prefekt = true;
         }
-        public string DajKucu() 
-        {
-            return kuca.Ime_kuce;
-        }
 
-        //izmjena
     }
 }
